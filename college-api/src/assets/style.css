@@ -3,5 +3,13 @@
 @tailwind utilities;
 
 @layer components {
-	
+    .btn-primary-auto {
+        @apply border-primary-light bg-primary-light text-text-dark dark:text-text-light dark:border-primary-dark dark:bg-primary-dark;
+    }
+}
+
+@layer base {
+	html {
+		font-family: 'Josefin Sans', sans-serif;
+	}
 }
