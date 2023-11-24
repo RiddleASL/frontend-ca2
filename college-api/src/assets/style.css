@@ -5,6 +5,7 @@
 @layer components {
     .btn-primary-auto {
         @apply border-primary-light bg-primary-light text-text-dark dark:text-text-light dark:border-primary-dark dark:bg-primary-dark;
+        @apply hover:bg-primary-light-alt hover:border-primary-light-alt dark:hover:bg-primary-dark-alt dark:hover:border-primary-dark-alt;
     }
 }
 
@@ -12,4 +13,12 @@
 	html {
 		font-family: 'Josefin Sans', sans-serif;
 	}
+    
+    #root{
+        min-height: 100vh;
+    }
+
+    #login > input {
+        @apply my-3;
+    }
 }

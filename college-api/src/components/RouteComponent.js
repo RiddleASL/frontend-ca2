@@ -7,18 +7,18 @@ import {
 } from "react-router-dom";
 
 //Style Import
-import "./assets/style.css";
+import "../assets/style.css";
 
 //Page Imports
-import Home from "./pages/Home";
-import Login from "./pages/User/Login";
-import Register from "./pages/User/Register";
+import Home from "../pages/Home";
+import Login from "../pages/User/Login";
+import Register from "../pages/User/Register";
 
 //Component Imports
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-const App = () => {
+const RouteComponent = () => {
 	return (
         <Router>
             <Navbar />
@@ -34,4 +34,4 @@ const App = () => {
 );
 };
 
-export default App;
+export default RouteComponent;

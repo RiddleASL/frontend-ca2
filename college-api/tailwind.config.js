@@ -14,7 +14,9 @@ module.exports = {
         'text-dark': '#262522',
         'primary': {
           "light" : '#C4D4F2',
-          'dark' : '#4b45b2'
+          'light-alt' : '#b8c8e5',
+          'dark' : '#4b45b2',
+          'dark-alt' : '#874dcc',
         },
       },
     },
