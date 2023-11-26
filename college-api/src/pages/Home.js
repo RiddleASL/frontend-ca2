@@ -19,6 +19,7 @@ const Home = () => {
 				<p>Register and Enrol now to officially become one of our many real** students!  </p>
 				<hr className='border-2 rounded my-10 w-1/4 mx-auto'/>
 				<p>Login / Register to view courses, course details, lecturers in courses and more!</p>
+				<p className='text-5 text-right disabled'>** 100% of students are in-fact not real</p>
 				<hr className='border-2 rounded my-10 w-1/4 mx-auto'/>
 				
 				<div className='flex gap-5 justify-center'>

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -56,7 +55,7 @@ const Register = () => {
 	return (
 		<>
 			<div className="dark:bg-bg-dark-alt bg-bg-light-alt py-10 dark:text-text-light text-text-dark flex">
-				<div className="card w-96 dark:bg-bg-dark shadow-xl my-20 mx-auto">
+				<div className="card w-96 dark:bg-bg-dark bg-bg-light shadow-xl my-20 mx-auto">
 					<div className="card-body">
 						<h2 className="card-title justify-center">Register</h2>
 						<form id='login' className=" text-center" onSubmit={submitInfo}>

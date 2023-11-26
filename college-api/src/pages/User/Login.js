@@ -1,5 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useSignIn } from 'react-auth-kit';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -22,6 +21,7 @@ const Login = () => {
 		
 		axios.post('https://college-api.vercel.app/api/login', { email: email, password: password }).then((response) => {
 			console.log(response.data);
+			localStorage.setItem('token', response.data.token);
 			navigate('/');
 		}).catch((err) => {
 			console.log(err.response.data.error);
@@ -42,7 +42,7 @@ const Login = () => {
 	return (
 		<>
 			<div className="dark:bg-bg-dark-alt bg-bg-light-alt py-10 dark:text-text-light text-text-dark flex">
-				<div className="card w-96 dark:bg-bg-dark shadow-xl my-20 mx-auto">
+				<div className="card w-96 dark:bg-bg-dark bg-bg-light shadow-xl my-20 mx-auto">
 					<div className="card-body">
 						<h2 className="card-title justify-center">Login</h2>
 						<form id='login' className=" text-center" onSubmit={submitInfo}>

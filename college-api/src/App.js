@@ -6,6 +6,7 @@ import {
 	useLocation,
 } from "react-router-dom";
 
+
 //Style Import
 import "./assets/style.css";
 
@@ -31,7 +32,7 @@ const App = () => {
             </Routes>
             <Footer />
         </Router>
-);
+    );
 };
 
 export default App;
