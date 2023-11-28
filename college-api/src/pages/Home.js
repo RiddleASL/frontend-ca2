@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 	return (
 		<div className="dark:bg-bg-dark-alt bg-bg-light-alt pt-5 dark:text-text-light text-text-dark flex gap-10">
-			<div>
-				<StudentStudying/>
+			<div className=''>
+				<StudentStudying className='lg:w-max md:w-/2 sm:w-min'/>
 			</div>
 			<div className='border-2 rounded dark:border-text-light border-text-dark mb-5'/>
 			<div className='text-3 text-center mx-auto pe-5 py-16'>

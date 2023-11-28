@@ -12,9 +12,6 @@ const Register = () => {
 
 	const [showPassword, setShowPassword] = useState(false);
 
-
-	const navigate = useNavigate();
-
 	const submitInfo = async (e) => {
 		e.preventDefault()
 		setError({});
