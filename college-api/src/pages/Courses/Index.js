@@ -20,7 +20,7 @@ const Index = () => {
 
 		axios
 			.get(API_URL, {
-				headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+				headers: { Authorization: `Bearer ${token}` },
 			})
 			.then((res) => {
 				console.log(res.data.data);
