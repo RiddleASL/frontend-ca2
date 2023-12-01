@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Lecturer = (props) => {
 	return (
-		<Link to={'/'}>
+		<Link to={`/lecturers/${props.lecturer.id}`}>
 			<div className="card bg-base-100 shadow-xl hover:bg-slate-600">
 				<div className="card-body">
 					<h2 className="card-title mx-auto">{props.lecturer.name}</h2>

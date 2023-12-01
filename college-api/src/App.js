@@ -39,6 +39,8 @@ const App = () => {
                 {/* Course Stuff */}
                 <Route path="/courses" element={<CoursesIndex />} />
                 <Route path="/courses/:id" element={<CoursesShow />} />
+
+                {/* Lecturer Stuff */}
             </Routes>
             <Footer />
         </Router>
