@@ -6,7 +6,6 @@ import {
 	useLocation,
 } from "react-router-dom";
 
-
 //Style Import
 import "./assets/style.css";
 
@@ -19,32 +18,51 @@ import Logout from "./pages/User/Logout";
 //* Course Pages
 import CoursesIndex from "./pages/Courses/Index";
 import CoursesShow from "./pages/Courses/Show";
+//* Lecturer Pages
+import LecturersIndex from "./pages/Lecturers/Index";
+import LecturersShow from "./pages/Lecturers/Show";
 
 //Component Imports
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const App = () => {
+	const safeRoutes = () => {
+		return (
+			<>
+				<Route path="/" element={<Home />} />
+
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
+			</>
+		);
+	};
+
+	const protectedRoutes = () => {
+		return (
+			<>
+				<Route path="/logout" element={<Logout />} />
+
+				<Route path="/courses" element={<CoursesIndex />} />
+				<Route path="/courses/:id" element={<CoursesShow />} />
+
+				<Route path="/lecturers" element={<LecturersIndex />} />
+				<Route path="/lecturers/:id" element={<LecturersShow />} />
+			</>
+		);
+	};
+
 	return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-
-                {/* User Stuff */}
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/logout" element={<Logout />} />
-
-                {/* Course Stuff */}
-                <Route path="/courses" element={<CoursesIndex />} />
-                <Route path="/courses/:id" element={<CoursesShow />} />
-
-                {/* Lecturer Stuff */}
-            </Routes>
-            <Footer />
-        </Router>
-    );
+		<Router>
+			<Navbar />
+			<Routes>
+				{safeRoutes()}
+                
+                {protectedRoutes()}
+			</Routes>
+			<Footer />
+		</Router>
+	);
 };
 
 export default App;

@@ -21,11 +21,6 @@ const Home = () => {
 				<p>Login / Register to view courses, course details, lecturers in courses and more!</p>
 				<p className='text-5 text-right disabled'>** 100% of students are in-fact not real</p>
 				<hr className='border-2 rounded my-10 w-1/4 mx-auto'/>
-				
-				<div className='flex gap-5 justify-center'>
-					<Link to={'/login'} className='btn btn-primary font-normal text-3 p-2 px-5 btn-primary-auto border-2 '>Register</Link>
-					<Link to={'/login'} className='btn btn-primary font-normal text-3 p-2 px-5 btn-primary-auto border-2 '>Login</Link>
-				</div>
 			</div>
 		</div>
 	);
