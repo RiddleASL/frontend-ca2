@@ -18,6 +18,7 @@ import Register from "./pages/User/Register";
 import Logout from "./pages/User/Logout";
 //* Course Pages
 import CoursesIndex from "./pages/Courses/Index";
+import CoursesShow from "./pages/Courses/Show";
 
 //Component Imports
 import Navbar from "./components/Navbar";
@@ -37,6 +38,9 @@ const App = () => {
 
                 {/* Course Stuff */}
                 <Route path="/courses" element={<CoursesIndex />} />
+                <Route path="/courses/:id" element={<CoursesShow />} />
+
+                {/* Lecturer Stuff */}
             </Routes>
             <Footer />
         </Router>
