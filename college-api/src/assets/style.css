@@ -7,12 +7,33 @@
         @apply border-primary-light bg-primary-light text-text-dark dark:text-text-light dark:border-primary-dark dark:bg-primary-dark;
         @apply hover:bg-primary-light-alt hover:border-primary-light-alt dark:hover:bg-primary-dark-alt dark:hover:border-primary-dark-alt;
     }
+
+    .bg-auto {
+        @apply dark:bg-bg-dark-alt bg-bg-light-alt pt-5 dark:text-text-light text-text-dark;
+    }
+
+    .rlink-hover {
+        @apply hover:bg-bg-light dark:hover:bg-bg-dark; 
+    }
+
+    .border-auto{
+        @apply border-bg-dark-alt dark:border-white;
+    }
 }
 
 @layer base {
 	html {
 		font-family: 'Josefin Sans', sans-serif;
 	}
+
+    hr{
+        @apply border-bg-dark-alt dark:border-white;
+    }
+
+    body {
+        @apply bg-auto;
+        padding: 0;
+    }
     
     #root{
         min-height: 100vh;

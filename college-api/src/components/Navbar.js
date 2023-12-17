@@ -51,11 +51,11 @@ const Navbar = () => {
                         {navbarLinks()}
                         <div className='border-2 rounded dark:border-bg-light border-bg-dark'/>
                         <li>
-							<Link to={'/contact'}>Contact</Link>
+							<Link to={'/lecturers'}>Lecturers</Link>
 						</li>
                         <div className='border-2 rounded dark:border-bg-light border-bg-dark'/>
                         <li>
-							<Link to={'/about'}>About</Link>
+							<Link to={'/enrollments'}>Enrollments</Link>
 						</li>
 					</ul>
 				</div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <>
-            <footer className="footer p-10 bg-neutral text-neutral-content py-20">
+            <footer className="footer p-10 bg-neutral text-neutral-content py-20 mt-auto">
             <div className='container flex gap-32 justify-center'>
                 <aside>
                     <Link to={'/'} className='gap-3 flex text-3 items-center'><bi.MortarboardFill className='text-2'/>NCFK</Link>

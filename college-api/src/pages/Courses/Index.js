@@ -1,6 +1,7 @@
 import * as r from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import CourseCard from "../../components/CourseCard";
 
 //bootstrap icons
 import * as bi from "react-bootstrap-icons";
@@ -11,6 +12,7 @@ const Index = () => {
 	const navigate = useNavigate();
 
 	const [courses, setCourses] = r.useState([]);
+	const [filtered, setFiltered] = r.useState([]);
 	const [search, setSearch] = r.useState("");
 
 	r.useEffect(() => {
@@ -25,6 +27,7 @@ const Index = () => {
 			.then((res) => {
 				console.log(res.data.data);
 				setCourses(res.data.data);
+				setFiltered(res.data.data);
 			})
 			.catch((err) => {
 				console.log(err);
@@ -33,42 +36,23 @@ const Index = () => {
 
 	const handleSearch = (e) => {
 		setSearch(e.target.value);
+		const filtered = courses.filter((course) => {
+			console.log(course);
+			return course.title.toLowerCase().includes(e.target.value.toLowerCase());
+		});
+		setFiltered(filtered);
 	};
 
-	const displayCourses = courses.map((course) => {
+	const displayCourses = filtered.map((course) => {
 		return (
-			<div className="card bg-base-100 shadow-xl" key={course.id}>
-				<div className="card-body">
-					<Link to={`/courses/${course.id}`} className="card-title text-2 mb-5">
-						{course.title}
-					</Link>
-					<div className="flex justify-around text-3">
-						<div>
-							<p className="text-sm">{course.description}</p>
-						</div>
-						<div className="border-2 mx-5" />
-						<div className="w-1/2">
-							<ul>
-								<li>
-									<p className="text-sm">Code: {course.code}</p>
-								</li>
-								<li>
-									<p className="text-sm">Level: {course.level}</p>
-								</li>
-								<li>
-									<p className="text-sm">Points: {course.points}</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+			<CourseCard key={course.id} course={course} />
 		);
 	});
 
+	
 	return (
 		<>
-			<div className="mx-auto dark:bg-bg-dark-alt bg-bg-light-alt pt-5 dark:text-text-light text-text-dark flex gap-10">
+			<div className="dark:bg-bg-dark-alt bg-bg-light-alt pt-5 dark:text-text-light text-text-dark flex gap-10 pb-5">
 				<div className="container mx-auto">
 					<div className="gap-5 flex px-10 mx-10">
 						<button
